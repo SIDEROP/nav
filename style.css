@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body,html{
+    height: 100vh;
+    position: relative;
+    background-color: rgba(157, 155, 155, 0.172);
+}
+
+:root{
+    --w:15%;
+    --nw:85%;
+    --mw:100%;
+    --bg: black;
+    --cl: white;
+    --vh: 100vh;
+    --vw: 100vw;
+}
+
+
+
+
+
+
+/* nav_link */
+
+section{
+    position: relative;
+    z-index: 99;
+}
+section .header_{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: black;
+    color: var(--cl);
+    height: 8vh;
+
+
+}
+
+section .header_ .logo{
+    width: var(--w);
+    font-size: 1.3rem;
+    min-width: fit-content;
+    cursor: pointer;
+    user-select: none;
+}
+section .header_ #btn{
+    display: none;
+}
+section .header_ .nav_links{
+    width: var(--nw);
+    min-width: fit-content;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.atv{
+    background-color: orange;
+    cursor: pointer;
+}
+
+/* nav_link */
+
+
+
+
+
+
+
+
+
+/* nav_link media */
+
+@media only screen and (max-width:768px ) {
+    section{
+        position: fixed;
+        left: 0;
+        height: 44px;
+        width: var(--vw);
+        background-color: var(--bg);
+    }
+    section.active > .header_{
+        display: none;
+        height: 0vh;
+    }
+    #btn{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: rgb(255, 2, 2);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 99;
+    }
+    section .header_{
+        flex-direction: column;
+        width: 275px;
+        height: var(--vh);
+    }
+
+    section .header_ .logo{
+        margin-top: 27px;
+    }
+
+    section .header_ .nav_links{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+}
+
+
+
+/* nav_link media */
+
+
+
+
+
+
+
+
+
+
+/* gaillery */
+
+.img_row img{
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+
+}
+.img_row img:hover{
+    display: inline-block;
+    transform: scale(1.3,1.3);
+}
+
+main > .img_box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: end;
+    width: var(--vw);
+    height: var(--vh);
+}
+
+
+main > .img_box > .img_row{
+    height: 92vh;
+    width: 25vw;
+    background-color: green;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+}
+
+main > .img_box > .img_row .img_col{
+    background-color: greenyellow;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+main > .img_box > .img_row .acol_1{
+    height: 25%;
+}
+main > .img_box > .img_row .acol_2{
+    height: 35%;
+}
+main > .img_box > .img_row .acol_3{
+    height: 40%;
+}
+
+
+
+main > .img_box > .img_row .bcol_1{
+    height: 35%;
+}
+main > .img_box > .img_row .bcol_2{
+    height: 40%;
+}
+main > .img_box > .img_row .bcol_3{
+    height: 25%;
+}
+
+
+
+main > .img_box > .img_row .ccol_1{
+    height: 40%;
+}
+main > .img_box > .img_row .ccol_2{
+    height: 25%;
+}
+main > .img_box > .img_row .ccol_3{
+    height: 35%;
+}
+
+
+main > .img_box > .img_row .dcol_1{
+    height: 35%;
+}
+main > .img_box > .img_row .dcol_2{
+    height: 40%;
+}
+main > .img_box > .img_row .dcol_3{
+    height: 25%;
+}
+
+/* gaillery */
+
+
+
+
+
+
+
+
+
+/* gaillery media */
+
+@media only screen and (max-width:768px ) {
+    main > .img_box > .img_row{
+        width: 50vw;
+    }
+    .img_row img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+     }
+}
+
+@media only screen and (max-width:425px ) {
+    main > .img_box > .img_row{
+        width: var(--vw);
+    }
+}
+/* gaillery media */
+
+
+
+
+
+
+
+
+/* ignore */
+
+
+body > .pop{
+    width: var(--vw);
+    height: var(--vh);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > .pop.none{
+    display: none;
+}
+
+body > .pop > span{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    right: 22%;
+    top: 19%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop > img{
+    width: 48%;
+    height: 48%;
+    background-color: orange;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 2px white;
+}
+
+
+/* ignore */
